@@ -47,13 +47,15 @@ const Login = () => {
       console.error("Login error:", err);
       
       if (err.code === "auth/user-not-found") {
-        setErrorMessage("User not found. Please check your email.");
+        setErrorMessage("User not found. Please register an account first.");
       } else if (err.code === "auth/wrong-password") {
         setErrorMessage("Invalid password. Please try again.");
       } else if (err.code === "auth/invalid-email") {
         setErrorMessage("Invalid email format.");
+      } else if (err.message) {
+        setErrorMessage(err.message);
       } else {
-        setErrorMessage("Invalid email or password. Please try again.");
+        setErrorMessage("Login failed. Please check your credentials and try again.");
       }
     } finally {
       setIsLoading(false);

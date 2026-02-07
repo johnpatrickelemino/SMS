@@ -51,19 +51,26 @@ const Register = () => {
       const user = userCredential.user;
 
       // Save user data to Firestore with complete student profile
-      await setDoc(doc(db, "users", user.uid), {
-        firstName: firstName,
-        lastName: lastName,
-        fullName: `${firstName} ${lastName}`,
-        email: email,
-        role: role,
-        studentId: studentId,
-        course: course,
-        yearLevel: yearLevel,
-        status: 'Active',
-        createdAt: new Date(),
-        uid: user.uid,
-      });
+      try {
+        await setDoc(doc(db, "users", user.uid), {
+          firstName: firstName,
+          lastName: lastName,
+          fullName: `${firstName} ${lastName}`,
+          email: email,
+          role: role,
+          studentId: studentId,
+          course: course,
+          yearLevel: yearLevel,
+          status: 'Active',
+          createdAt: new Date(),
+          uid: user.uid,
+          profileCompleted: true,
+        });
+      } catch (firestoreErr) {
+        console.error("Firestore error:", firestoreErr);
+        // Even if Firestore fails, the auth user was created, so we continue
+        setErrorMessage("Warning: Profile may not have saved completely, but account was created.");
+      }
 
       setSuccessMessage("Registration successful! Redirecting to login...");
       
