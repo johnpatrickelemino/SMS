@@ -17,6 +17,7 @@ builder.Services.AddScoped<EmailService>();
 var app = builder.Build();
 
 app.UseCors("AllowReact");
+builder.Services.AddScoped<EmailService>();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

@@ -20,6 +20,7 @@ const StudentDashboard = () => {
   });
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  
 
   useEffect(() => {
     // Check if user is authenticated and is a Student
