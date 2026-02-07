@@ -30,3 +30,4 @@ C:\Users\johnp\my-react-app\StudentManagementAPI\obj\Debug\net9.0\refint\Student
 C:\Users\johnp\my-react-app\StudentManagementAPI\obj\Debug\net9.0\StudentManagementAPI.pdb
 C:\Users\johnp\my-react-app\StudentManagementAPI\obj\Debug\net9.0\StudentManagementAPI.genruntimeconfig.cache
 C:\Users\johnp\my-react-app\StudentManagementAPI\obj\Debug\net9.0\ref\StudentManagementAPI.dll
+C:\Users\johnp\my-react-app\StudentManagementAPI\obj\Debug\net9.0\StudentManagementAPI.sourcelink.json
